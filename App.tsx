@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, View } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import Day2Screen from './Day2Screen';
 import Day3Screen from './Day3Screen';
+import Assessment from './assess';
 
 function App(): React.JSX.Element {
   return (
@@ -12,6 +12,7 @@ function App(): React.JSX.Element {
     </SafeAreaProvider>
   );
 }
+
 
 function MainContainer(): React.JSX.Element {
   const insets = useSafeAreaInsets();
@@ -25,10 +26,10 @@ function MainContainer(): React.JSX.Element {
       ]}>
       {/* Top Bar Switcher */}
       <View style={styles.navBar}>
-        <Button
-          title="View Day 2"
-          color={activeDay === 2 ? '#2563EB' : '#6B7280'}
-          onPress={() => setActiveDay(2)}
+         <Button
+          title="View Assessment"
+          color="#37208b"
+          onPress={() => setActiveDay(4)}
         />
         <Button
           title="View Day 3"
@@ -39,7 +40,7 @@ function MainContainer(): React.JSX.Element {
 
       {/* Active Screen Area */}
       <View style={styles.screenContainer}>
-        {activeDay === 2 ? <Day2Screen /> : <Day3Screen />}
+        {activeDay === 4 ? <Assessment /> : <Day3Screen />}
       </View>
     </View>
   );
